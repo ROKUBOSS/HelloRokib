@@ -1,0 +1,7 @@
+1-Admin Role
+2-Dashboard 
+3-Inventory 
+4-Payment Gateway 
+5-Search 
+6-Responsive 
+

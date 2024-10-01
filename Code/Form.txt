@@ -1,0 +1,12 @@
+1-Form
+2-Register
+3-Log In
+4-Log Out
+
+
+*Notification
+*Strong Password 
+*Forgot Password 
+*New Password 
+*Verification 
+

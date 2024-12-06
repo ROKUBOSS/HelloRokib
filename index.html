@@ -6,7 +6,7 @@
   <title>Rakib-Hasan</title>
   <link rel="shortcut icon" href="favicon.jpeg" type="image/x-icon">
   <style>
-    /* git push -u origin main */
+    /* Global styles */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -17,6 +17,7 @@
     body, html {
       height: 100%;
       margin: 0;
+      overflow-x: hidden;
     }
 
     .main {
@@ -26,27 +27,32 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px;
     }
 
     .menu {
       display: flex;
-      flex-direction: column;
-      width: 250px;
+      flex-wrap: wrap;
+      justify-content: center;
       background: rgba(255, 255, 255, 0.1);
       padding: 20px;
       border-radius: 10px;
       backdrop-filter: blur(10px);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 800px;
     }
 
     .menu a {
       color: white;
       text-decoration: none;
       padding: 15px;
-      margin: 10px 0;
+      margin: 10px;
       background: rgba(255, 255, 255, 0.2);
       text-align: center;
       border-radius: 5px;
+      flex: 1 1 calc(33.33% - 20px); /* 3 items per row */
+      max-width: calc(33.33% - 20px);
       transition: background 0.3s, transform 0.3s;
     }
 
@@ -55,14 +61,38 @@
       transform: scale(1.05);
     }
 
-    @media (max-width: 620px) {
+    /* Responsive styles for tablets */
+    @media (max-width: 768px) {
+      .menu a {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row */
+        max-width: calc(50% - 20px);
+      }
+    }
+
+    /* Responsive styles for mobile devices */
+    @media (max-width: 480px) {
       .menu {
-        width: 100%;
+        flex-direction: column;
         padding: 10px;
       }
 
       .menu a {
+        flex: 1 1 100%; /* 1 item per row */
+        max-width: 100%;
+        margin: 5px 0;
         font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    /* Extra small devices (e.g., older phones) */
+    @media (max-width: 360px) {
+      .menu a {
+        font-size: 12px;
+        padding: 8px;
+      }
+
+      .main {
         padding: 10px;
       }
     }
